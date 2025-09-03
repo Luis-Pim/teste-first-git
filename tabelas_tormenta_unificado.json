@@ -1,0 +1,1941 @@
+{
+  "Armas": [
+    {
+      " Nome": "Adaga",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 2",
+      "Dano": "1d4",
+      "Margem de ameaça": 19,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal/curto",
+      "Tipo": "perfuração",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Espada curta",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 10",
+      "Dano": "1d6",
+      "Margem de ameaça": 19,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "perfuração",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Foice",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 4",
+      "Dano": "1d6",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x3",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Clava",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 0",
+      "Dano": "1d6",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "impacto",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Lança",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 2",
+      "Dano": "1d6",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal/curto",
+      "Tipo": "perfuração",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Maça",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 12",
+      "Dano": "1d8",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "impacto",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Bordão ",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 0",
+      "Dano": "1d6",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "impacto ",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Pique",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 2",
+      "Dano": "1d8",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "perfuração ",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Tacape",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 0",
+      "Dano": "1d10",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "impacto ",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Azagaia",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 1",
+      "Dano": "1d6",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "médio",
+      "Tipo": "perfuração ",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Besta leve",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 35",
+      "Dano": "1d8",
+      "Margem de ameaça": 19,
+      "Multiplicador de critico": "x2",
+      "Alcance": "médio",
+      "Tipo": "perfuração ",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Funda",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 0",
+      "Dano": "1d4",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "médio ",
+      "Tipo": "impacto ",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Arco curto",
+      "Tipo ": "Arma simples",
+      "Preço ": "T$ 30",
+      "Dano": "1d6",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x3",
+      "Alcance": "médio",
+      "Tipo": "perfuração ",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Machadinha",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 15",
+      "Dano": "1d6",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x3",
+      "Alcance": "curto",
+      "Tipo": "corte",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Cimitarra",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 15",
+      "Dano": "1d6",
+      "Margem de ameaça": 18,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Espada longa",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 15",
+      "Dano": "1d8",
+      "Margem de ameaça": 19,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal ",
+      "Tipo": "corte",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "florete",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 20",
+      "Dano": "1d6",
+      "Margem de ameaça": 18,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "perfuração",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Machado de batalha",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 10",
+      "Dano": "1d8",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x3",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Mangual",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 8",
+      "Dano": "1d8",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "impacto",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Martelo de guerra",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 12",
+      "Dano": "1d8",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x3",
+      "Alcance": "pessoal",
+      "Tipo": "impacto",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Picareta",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 8",
+      "Dano": "1d6",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x4",
+      "Alcance": "pessoal",
+      "Tipo": "impacto",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "legenda",
+      "Unnamed: 11": "T$ = ",
+      "Unnamed: 12": "Tibar de prata"
+    },
+    {
+      " Nome": "Tridente",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 15",
+      "Dano": "1d8",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal/curto",
+      "Tipo": "perfurante",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "Alcance pessoal/curto =",
+      "Unnamed: 12": " Arremessavél"
+    },
+    {
+      " Nome": "Alabarda",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 10",
+      "Dano": "1d10",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x3",
+      "Alcance": "pessoal",
+      "Tipo": "corte/perfuração",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "1dx/1dy = ",
+      "Unnamed: 12": "Dano muda segurando com uma mão ou duas"
+    },
+    {
+      " Nome": "Alfange",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 75",
+      "Dano": "2d4",
+      "Margem de ameaça": 18,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Gadanho",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 18",
+      "Dano": "2d4",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x4",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Lança montada",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 10",
+      "Dano": "1d8",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x3",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Machado de guerra",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 20",
+      "Dano": "1d12",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x3",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Marreta",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 20",
+      "Dano": "3d4",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "impacto",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Montante",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 50",
+      "Dano": "2d6",
+      "Margem de ameaça": 19,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Arco longo",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 100",
+      "Dano": "1d8",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x3",
+      "Alcance": "médio",
+      "Tipo": "perfuraçao",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Besta  pesada",
+      "Tipo ": "Arma marcial",
+      "Preço ": "T$ 50",
+      "Dano": "1d12",
+      "Margem de ameaça": 19,
+      "Multiplicador de critico": "x2",
+      "Alcance": "médio",
+      "Tipo": "perfuração",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Chicote",
+      "Tipo ": "Arma exótica",
+      "Preço ": "T$ 2",
+      "Dano": "1d3",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "impacto",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Espada bastarda",
+      "Tipo ": "Arma exótica",
+      "Preço ": "T$ 35",
+      "Dano": "1d10/1d12",
+      "Margem de ameaça": 19,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Katana",
+      "Tipo ": "Arma exótica",
+      "Preço ": "T$ 100",
+      "Dano": "1d8/1d10",
+      "Margem de ameaça": 19,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Machado anão",
+      "Tipo ": "Arma exótica",
+      "Preço ": "T$ 30",
+      "Dano": "1d10",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x3",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Corrente de espinhos",
+      "Tipo ": "Arma exótica",
+      "Preço ": "T$ 25",
+      "Dano": "2d4",
+      "Margem de ameaça": 19,
+      "Multiplicador de critico": "x2",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Machado táurico",
+      "Tipo ": "Arma exótica",
+      "Preço ": "T$ 50",
+      "Dano": "2d8",
+      "Margem de ameaça": 20,
+      "Multiplicador de critico": "x3",
+      "Alcance": "pessoal",
+      "Tipo": "corte",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Pistola",
+      "Tipo ": "Armas de fogo",
+      "Preço ": "T$ 250",
+      "Dano": "2d6",
+      "Margem de ameaça": 19,
+      "Multiplicador de critico": "x3",
+      "Alcance": "curto",
+      "Tipo": "perfuração",
+      " Espaços": 1,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    },
+    {
+      " Nome": "Mosquete",
+      "Tipo ": "Armas de fogo",
+      "Preço ": "T$ 500",
+      "Dano": "2d8",
+      "Margem de ameaça": 19,
+      "Multiplicador de critico": "x3",
+      "Alcance": "médio",
+      "Tipo": "perfuração",
+      " Espaços": 2,
+      "Categoria de equipamento": "Armas",
+      "Unnamed: 10": "",
+      "Unnamed: 11": "",
+      "Unnamed: 12": ""
+    }
+  ],
+  "Armaduras e escudos": [
+    {
+      "Nome": "Armadura acolchoada",
+      "Preço": "T$ 5",
+      "Tipo": "Armadura leve",
+      "Bônus na defesa": 1,
+      "Penalidade de armadura": 0,
+      "Espaços ": 2,
+      "Categoria de Equipamento": "Armaduras"
+    },
+    {
+      "Nome": "Armadura de couro",
+      "Preço": "T$ 20",
+      "Tipo": "Armadura leve",
+      "Bônus na defesa": 2,
+      "Penalidade de armadura": 0,
+      "Espaços ": 2,
+      "Categoria de Equipamento": "Armaduras"
+    },
+    {
+      "Nome": "Couro batido ",
+      "Preço": "T$ 35",
+      "Tipo": "Armadura leve",
+      "Bônus na defesa": 3,
+      "Penalidade de armadura": -1,
+      "Espaços ": 2,
+      "Categoria de Equipamento": "Armaduras"
+    },
+    {
+      "Nome": "Gibão de peles",
+      "Preço": "T$ 25",
+      "Tipo": "Armadura leve",
+      "Bônus na defesa": 4,
+      "Penalidade de armadura": -3,
+      "Espaços ": 2,
+      "Categoria de Equipamento": "Armaduras"
+    },
+    {
+      "Nome": "Couraça",
+      "Preço": "T$ 500",
+      "Tipo": "Armadura leve",
+      "Bônus na defesa": 5,
+      "Penalidade de armadura": -4,
+      "Espaços ": 2,
+      "Categoria de Equipamento": "Armaduras"
+    },
+    {
+      "Nome": "Brunea",
+      "Preço": "T$ 50",
+      "Tipo": "Armadura pesada",
+      "Bônus na defesa": 5,
+      "Penalidade de armadura": -2,
+      "Espaços ": 5,
+      "Categoria de Equipamento": "Armaduras"
+    },
+    {
+      "Nome": "Cota de malha",
+      "Preço": "T$ 150",
+      "Tipo": "Armadura pesada",
+      "Bônus na defesa": 6,
+      "Penalidade de armadura": -2,
+      "Espaços ": 5,
+      "Categoria de Equipamento": "Armaduras"
+    },
+    {
+      "Nome": "Loriga segmentada",
+      "Preço": "T$ 250",
+      "Tipo": "Armadura pesada",
+      "Bônus na defesa": 7,
+      "Penalidade de armadura": -3,
+      "Espaços ": 5,
+      "Categoria de Equipamento": "Armaduras"
+    },
+    {
+      "Nome": "Meia Armadura",
+      "Preço": "T$ 600",
+      "Tipo": "Armadura pesada",
+      "Bônus na defesa": 8,
+      "Penalidade de armadura": -4,
+      "Espaços ": 5,
+      "Categoria de Equipamento": "Armaduras"
+    },
+    {
+      "Nome": "Armadura completa",
+      "Preço": "T$ 3000",
+      "Tipo": "Armadura pesada",
+      "Bônus na defesa": 10,
+      "Penalidade de armadura": -5,
+      "Espaços ": 5,
+      "Categoria de Equipamento": "Armaduras"
+    },
+    {
+      "Nome": "Escudo leve",
+      "Preço": "T$ 5",
+      "Tipo": "Escudos",
+      "Bônus na defesa": 1,
+      "Penalidade de armadura": -1,
+      "Espaços ": 1,
+      "Categoria de Equipamento": "Escudos"
+    },
+    {
+      "Nome": "Escudo pesado",
+      "Preço": "T$ 15",
+      "Tipo": "Escudos",
+      "Bônus na defesa": 2,
+      "Penalidade de armadura": -2,
+      "Espaços ": 2,
+      "Categoria de Equipamento": "Escudos"
+    }
+  ],
+  "Equipamentos": [
+    {
+      "Nome": "Água benta",
+      "Descrição": "Produzida com a magia Abençoar\nAlimentos, esta água sagrada é um poderoso recurso na\nluta contra o mal. Para usar a água benta, você gasta\numa ação padrão e escolhe um morto-vivo, demônio\nou diabo em alcance curto (a água benta é inofensiva\ncontra outras criaturas). O alvo sofre 2d10 pontos de\ndano de luz (Reflexos CD Sab reduz à metade).",
+      "Ação": "Dano, luz, 2d10",
+      "preço": "T$ 10",
+      "Espaços": 0.5,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "dano, tipo, valor ",
+      "Unnamed: 8": "\"resistencia\", resistencia relacionada, valor ",
+      "Unnamed: 9": "\"Bonus\", percia, Valor"
+    },
+    {
+      "Nome": "Algemas",
+      "Descrição": "Um par de algemas para criaturas\nMédias. Prender uma criatura que não esteja indefesa\nexige empunhar a algema, agarrar o alvo (veja “Manobras\nde Combate”, no Capítulo 5) e vencer um\nnovo teste de agarrar contra ela. Você pode prender\nos dois pulsos da pessoa (–5 em testes que exijam o\nuso das mãos, impede conjuração) ou um dos pulsos\ndela em um objeto imóvel adjacente, caso haja, para\nimpedir que ela se mova. Escapar das algemas exige\numa ação completa e um teste de Acrobacia contra\nCD 30 ou de Força contra CD 25 — ou ter as chaves...",
+      "Ação": "penalidade, testes fisicos, -5",
+      "preço": "T$15",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "\"dano\", habilidade, valor",
+      "Unnamed: 8": "\"bonus\", Vida, valor ",
+      "Unnamed: 9": "\"Bonus\", mana, valor "
+    },
+    {
+      "Nome": "Arpéu",
+      "Descrição": "Um gancho de aço amarrado na ponta\nde uma corda para se fixar em muros, janelas, parapeitos\nde prédios... Prender um arpéu exige um teste\nde Pontaria (CD 15). Subir um muro com a ajuda de\numa corda fornece +5 no teste de Atletismo.",
+      "Ação": "bonus, atletismo(pericia), +5",
+      "preço": "T$ 5",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Bandoleira de poções",
+      "Descrição": "Um cinto de couro\ncom bolsos que comportam pequenos frascos. Se\nvocê estiver vestindo uma bandoleira, pode sacar\nitens alquímicos e poções como uma ação livre.",
+      "Ação": "",
+      "preço": "T$ 20",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Barraca",
+      "Descrição": "Esta barraca de lona conta como um\nsaco de dormir para duas pessoas e fornece +2 em\ntestes de Sobrevivência para acampar.",
+      "Ação": "bonus, sobreviencia, +2",
+      "preço": "T$ 10",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Corda",
+      "Descrição": "Um rolo com 10 metros de corda de\ncânhamo, o mesmo tipo usado em navios. Possui diversas\nutilidades: pode ajudar a descer um buraco ou\nmuro (+5 em testes de Atletismo nessas situações),\namarrar pessoas etc. Dar um nó firme ou especial\n(por exemplo, capaz de deslizar, se desfazer com\num puxão etc.) exige um teste de Destreza (CD 15).\nArrebentar a corda exige 2 pontos de dano de corte\nou uma ação padrão e um teste de Força (CD 20).",
+      "Ação": "bonus, atletismo, +5",
+      "preço": "T$ 1 ",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Espelho",
+      "Descrição": "Este pequeno espelho possui diversas\nutilidades: observar cantos, fazer sinais de luz e,\nclaro, garantir que você esteja apresentável.",
+      "Ação": "",
+      "preço": "T$ 10",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Lampião",
+      "Descrição": "Um cilindro com uma alça e duas\nportinholas. Uma chama alimentada por óleo é acesa\ndentro do cilindro e uma das portinholas aberta deixa\na luz sair. Acender um lampião é uma ação padrão e\nsua luz ilumina um raio com 15m. Carregar um lampião\ncom óleo é uma ação padrão e ele dura uma cena.",
+      "Ação": "",
+      "preço": "T$ 7",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Mochila",
+      "Descrição": "Uma bolsa de lona com tiras para ser\ncarregada nas costas. Não conta como item vestido.",
+      "Ação": "",
+      "preço": "T$ 2 ",
+      "Espaços": 0.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Mochila de aventureiro",
+      "Descrição": "Feita de couro\nresistente, esta mochila é repleta de bolsos para prender\nequipamento. Vestir uma mochila de aventureiro\naumenta sua capacidade de carga em 2 espaços (ela\nprópria não gasta um espaço).",
+      "Ação": "bonus, espaços, +2",
+      "preço": "T$ 50",
+      "Espaços": 0.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Óleo",
+      "Descrição": "Um frasco com óleo inflamável para\nlampião. Você pode atirar o frasco em uma criatura\nem alcance curto com uma ação padrão. Se ela sofrer\ndano de fogo até o fim do seu próximo turno, sofre\n1d6 pontos de dano extra e fica em chamas.",
+      "Ação": "bonus, dano (fogo), +1d6",
+      "preço": "T$ 0,1",
+      "Espaços": 0.5,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Organizador de Pergaminhos",
+      "Descrição": "Um estojo de madeira ou couro rígido. Se você estiver vestindo\num organizador de pergaminhos, pode sacar pergaminhos\ncomo uma ação livre.",
+      "Ação": "",
+      "preço": "T$ 25",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Pé de cabra",
+      "Descrição": "Esta barra de ferro fornece +5\nem testes de Força para abrir portas, janelas e baús\nfechados. Um pé de cabra pode ser usado como arma,\ncom as estatísticas de uma clava.",
+      "Ação": "bonus, força, +5",
+      "preço": "T$ 2",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Saco de dormir ",
+      "Descrição": "Um colchão com uma coberta\nfina o bastante para ser enrolada e amarrada,\né especialmente útil para aventureiros, que nunca\n sabem onde vão passar a noite. Dormir ao relento\nsem um acampamento e um saco de dormir diminui\nsua recuperação de PV e PM (veja a página 106).",
+      "Ação": "",
+      "preço": "T$ 1",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Simbolo sagrado",
+      "Descrição": "Um medalhão de madeira\nou metal com o símbolo de uma divindade. Se você\nestiver vestindo (normalmente com uma corrente\nao redor do pescoço) ou empunhando o símbolo\nsagrado de um deus do qual é devoto, recebe +1 em\ntestes de resistência.",
+      "Ação": "bonus, testes de resistencia, +1",
+      "preço": "T$ 5",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Tocha",
+      "Descrição": "Um bastão de madeira com algum\ncombustível na ponta (geralmente trapos embebidos\nem parafina). Acender uma tocha é uma ação padrão.\nEla ilumina um raio de 9m e dura uma cena. Pode\nser usada como uma arma simples leve (dano 1d4 de\nimpacto mais 1 de fogo, crítico x2).",
+      "Ação": "",
+      "preço": "T$ 0,1",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Vara de madeira 3m",
+      "Descrição": "Uma haste com 3m de\ncomprimento. Útil para alcançar pontos distantes,\nmas frágil demais para servir como arma.",
+      "Ação": "",
+      "preço": "T$ 0,2",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Equipamento de aventura",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Alaúde Élfico",
+      "Descrição": "Feito com madeira de alta\nqualidade e manufatura delicada, este alaúde gera\nnotas vívidas e emocionantes. Enquanto empunha\neste item, você pode usar a habilidade Inspiração\ncomo uma ação de movimento. Conta como um\ninstrumento musical.",
+      "Ação": "",
+      "preço": "T$ 300",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "Coleção de Livros",
+      "Descrição": "Uma pequena coleção\nde tomos e tratados sobre um assunto. Fornece +1\nem Conhecimento, Guerra, Misticismo,\nNobreza ou Religião (definido quando\no item é comprado ou fabricado)",
+      "Ação": "bonus, pericia (conhecimento, Guerra, Misticismo, Nobreza, religião), +1",
+      "preço": "T$ 75",
+      "Espaços": 1.0,
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "Ferramentas",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    },
+    {
+      "Nome": "",
+      "Descrição": "",
+      "Ação": "",
+      "preço": "T$",
+      "Espaços": "",
+      "Cateoria de equipamento": "",
+      "Unnamed: 6": "",
+      "Unnamed: 7": "",
+      "Unnamed: 8": "",
+      "Unnamed: 9": ""
+    }
+  ],
+  "Tipo de dano": [
+    {
+      "Nome": "Ácido",
+      "Descrição": "Certos monstros e perigos naturais,\nalém de itens alquímicos, causam dano deste tipo.\nÁcido é ligado ao elemento terra."
+    },
+    {
+      "Nome": "Corte.",
+      "Descrição": "Armas afiadas, como espadas, machados\ne as garras de um monstro, causam dano de corte."
+    },
+    {
+      "Nome": "Eletricidade",
+      "Descrição": "Algumas magias e perigos naturais,\ncomo um relâmpago, causam dano deste tipo.\nEletricidade é ligada ao elemento ar."
+    },
+    {
+      "Nome": "Essência",
+      "Descrição": "Energia mágica pura, canalizada por\nmagias como Seta Infalível de Talude"
+    },
+    {
+      "Nome": "Fogo",
+      "Descrição": "Causado por calor e chamas naturais e\nmágicas. Fogo é ligado ao elemento... fogo!"
+    },
+    {
+      "Nome": "Frio",
+      "Descrição": "Algumas magias, além de clima severo,\ncausam dano de frio. Ligado ao elemento água"
+    },
+    {
+      "Nome": "Impacto",
+      "Descrição": "Causado por armas de contusão,\ncomo clavas e maças, além de ondas de choque,\nexplosões, ataques sônicos e quedas"
+    },
+    {
+      "Nome": "Luz",
+      "Descrição": "Magias e outros efeitos provenientes de\ndivindades bondosas causam dano de luz"
+    },
+    {
+      "Nome": "Perfuração",
+      "Descrição": "Armas pontudas, como lanças, e\nmordidas de monstros causam dano de perfuração"
+    },
+    {
+      "Nome": "Psíquico",
+      "Descrição": "Ataques mentais e magias que afetam\na mente da vítima causam dano deste tipo"
+    },
+    {
+      "Nome": "Trevas",
+      "Descrição": "Causado por efeitos de necromancia e\nligados a divindades malignas"
+    }
+  ],
+  "Dogmas": [
+    {
+      "Dvindade": "Aharadak",
+      "Descrição": "Quase todos os\ncultistas de Aharadak são maníacos insanos, compelidos\na praticar os atos mais abomináveis. No entanto,\ntalvez devido à natureza alienígena e incompreensível\ndeste deus, alguns devotos conseguem se resguardar.\nPreservam sua humanidade, abstendo-se de cometer\ncrimes ou profanações. Ainda assim, o devoto paga\num preço. No início de qualquer cena de ação, role\n1d6. Com um resultado ímpar, você fica fascinado na\nprimeira rodada, perdido em devaneios sobre a futilidade\nda vida (mesmo que seja imune a esta condição)."
+    },
+    {
+      "Dvindade": "Allihanna",
+      "Descrição": "Devotos de\nAllihanna não podem usar armaduras e escudos\nfeitos de metal. Assim, você só pode usar armadura\nacolchoada, de couro, gibão de peles e escudo leve,\nou itens feitos de materiais especiais não metálicos.\nDevotos de Allihanna não podem descansar em\nnenhuma comunidade maior que uma aldeia (não\nperdem seus poderes, mas também não recuperam\npontos de vida ou mana). Por isso, sempre preferem\no relento a um quarto de estalagem."
+    },
+    {
+      "Dvindade": "Arsenal",
+      "Descrição": "Um devoto de\nArsenal é proibido de ser derrotado em qualquer tipo\nde combate ou disputa (como um teste oposto para\nver quem é mais forte). Caso seu grupo seja derrotado,\nisso também constitui uma violação das obrigações."
+    },
+    {
+      "Dvindade": "Azgher",
+      "Descrição": "O devoto de\nAzgher deve manter o rosto sempre coberto (com\numa máscara, capuz ou trapos). Sua face pode ser\nrevelada apenas ao sumo-sacerdote ou em seu funeral.\nDevotos do Sol também devem doar para a\nigreja de Azgher 20% de qualquer tesouro obtido.\nEssa doação deve ser feita em ouro, seja na forma\nde moedas ou itens."
+    },
+    {
+      "Dvindade": "Hyninn",
+      "Descrição": "Um devoto de\nHyninn não recusa participação em um golpe, trapaça\nou artimanha (o que muitas vezes inclui missões\npara roubar... hã, resgatar tesouros), exceto quando\nprejudica seus próprios aliados.\nO devoto também deve fazer um ato furtivo,\nousado ou proibido por dia (ou por sessão de jogo,\no que demorar mais), como oferenda a Hyninn.\nRoubar uma bolsa, enganar um miliciano, invadir o\nquarto de um nobre... Em termos de jogo, uma ação\nexigindo um teste de Enganação ou Ladinagem com\nCD mínima 15 + metade do seu nível."
+    },
+    {
+      "Dvindade": "Kallyadranoch",
+      "Descrição": "Para subir de\nnível, além de acumular XP suficiente, o devoto de\nKally deve realizar uma oferenda em tesouro. O valor\né igual à 20% da diferença do dinheiro inicial do nível\nque vai alcançar para o nível atual (por exemplo, T$\n80 para subir para o 4° nível). Sabe-se, também, de\ndevotos malignos que sacrificam vítimas a Kally (não\npermitido para personagens jogadores)."
+    },
+    {
+      "Dvindade": "Khalmyr",
+      "Descrição": "Devotos de Khalmyr\nnão podem recusar pedidos de ajuda de pessoas\ninocentes. Também devem cumprir as ordens de superiores\nna hierarquia da igreja (devotos do Deus da\nJustiça de nível maior) e só podem usar itens mágicos\npermanentes criados por devotos do mesmo deus."
+    },
+    {
+      "Dvindade": "Lena",
+      "Descrição": "Devotos de Lena\nnão podem causar dano letal ou perda de PV a criaturas\nvivas (fornecer bônus em dano letal também é\nproibido). Podem causar dano não letal e prejudicar\nseus inimigos (em termos de jogo, impondo condições),\ndesde que não causem dano letal ou perda de\nPV. Para um devoto de Lena, é preferível perder a\nprópria vida a tirá-la de outros.\nApenas mulheres podem ser devotas de Lena.\nUma clériga precisa dar à luz pelo menos uma vez\nantes de receber seus poderes divinos. A fecundação\né um mistério bem guardado pelas sacerdotisas;\nconta-se que a própria deusa vem semear suas discípulas.\nPaladinos de Lena podem ser homens (são os\núnicos devotos masculinos permitidos) ou mulheres"
+    },
+    {
+      "Dvindade": "Lin-Wu",
+      "Descrição": "Antigas proibições\nquanto a devotos estrangeiros ou do gênero\nfeminino não mais se aplicam. No entanto, devotos\nde Lin-Wu ainda devem demonstrar comportamento\nhonrado, jamais recorrendo a mentiras e subterfúgios.\nEm termos de jogo, são proibidos de tentar\nqualquer ação que exigiria um teste de Enganação,\nFurtividade ou Ladinagem."
+    },
+    {
+      "Dvindade": "Marah",
+      "Descrição": "Devotos de Marah\nnão podem causar dano, perda de PV e condições\na criaturas, exceto enfeitiçado, fascinado e pasmo\n(fornecer bônus em dano também é proibido). Em\ncombate, só podem recorrer a ações como proteger\nou curar — ou fugir, render-se ou aceitar a morte.\nUm devoto de Marah jamais vai causar violência,\nnem mesmo para se salvar."
+    },
+    {
+      "Dvindade": "Megalokk",
+      "Descrição": "Devotos de Megalokk\ndevem rejeitar os modos civilizados e se entregar\nà ferocidade, descontrole e impaciência. Você\né proibido de usar perícias baseadas em Inteligência\nou Carisma (exceto Adestramento e Intimidação) e\nnão pode preparar uma ação, escolher 10 ou 20 em\ntestes e lançar magias sustentadas (pois são ações\nque exigem foco e paciência)."
+    },
+    {
+      "Dvindade": "Nimb",
+      "Descrição": "Por serem\nincapazes de seguir regras, estes devotos não têm\n“obrigações” verdadeiras (portanto, nunca perdem\nPM por descumprirem suas O&R). No entanto,\nsofrem certas restrições que não podem ignorar.\nDevotos de Nimb são loucos (ou agem como se\nfossem), não conseguindo convencer ninguém de\ncoisa alguma. Você sofre –5 em testes de perícias\nbaseadas em Carisma. Além disso, no início de cada\ncena de ação, role 1d6. Com um resultado 1, você fica\nconfuso (mesmo que seja imune a esta condição)."
+    },
+    {
+      "Dvindade": "Oceano",
+      "Descrição": "As únicas armas\npermitidas para devotos do Oceano são a azagaia, a\nlança, o tridente e a rede. Podem usar apenas armaduras\nleves. O devoto também não pode se manter\nafastado do oceano por mais de um mês."
+    },
+    {
+      "Dvindade": "Sszzaas",
+      "Descrição": "O devoto deve\nfazer um ato de traição, intriga ou corrupção por dia\n(ou por sessão de jogo, o que demorar mais) como\noferenda a Sszzaas. Pouco importa se o alvo é aliado\nou inimigo — uns poucos sszzaazitas usam seus\nmétodos torpes para ajudar colegas aventureiros em\nsuas missões, às vezes sem que eles próprios saibam.\nSugerir a alguém que foi traído pelo cônjuge,\ninfluenciar um guarda a aceitar suborno, instruir um mercador a roubar nos preços, incriminar\nalguém por um crime que não cometeu, enganar\num guerreiro para que mate um oponente rendido e\ninofensivo... Em termos de jogo, uma ação exigindo\num teste de Enganação com CD mínima 15 + metade\ndo seu nível."
+    },
+    {
+      "Dvindade": "Tanna-Toh",
+      "Descrição": "Devotos de\nTanna-Toh jamais podem recusar uma missão que\nenvolva a busca por um novo conhecimento ou informação;\ninvestigar rumores sobre um livro perdido,\nprocurar uma aldeia lendária, pesquisar os hábitos\nde uma criatura desconhecida...\nAlém disso, o devoto sempre deve dizer a verdade\ne nunca pode se recusar a responder uma pergunta\ndireta, pouco importando as consequências. É\nproibido para ele esconder qualquer conhecimento."
+    },
+    {
+      "Dvindade": "Tenebra",
+      "Descrição": "Tenebra proíbe\nque seus devotos sejam tocados por Azgher, o odiado\nrival. O devoto deve se cobrir inteiramente durante o\ndia, sem expor ao sol nenhum pedaço de pele."
+    },
+    {
+      "Dvindade": "Thwor",
+      "Descrição": "Não importando\nsua raça, o devoto de Thwor deve ser duyshidakk\n— ou seja, aceito como membro do povo goblinoide.\nTambém deve se esforçar para que o “Mundo Como\nDeve Ser” tome o continente (veja a página 386).\nDeve sempre procurar fazer alianças com goblinoides\ne só lutar contra eles em último caso."
+    },
+    {
+      "Dvindade": "Thyatis",
+      "Descrição": "Devotos de\nThyatis são proibidos de matar criaturas inteligentes\n(Int –3 ou maior). Podem atacar e causar dano, mas\njamais levar à morte. Por esse motivo, devotos de\nThyatis preferem armas e ataques que apenas incapacitam\nseus oponentes ou causam dano não letal."
+    },
+    {
+      "Dvindade": "Valkaria",
+      "Descrição": "Valkaria odeia\no conformismo. Seus devotos são proibidos de\nfixar moradia em um mesmo lugar, não podendo\npermanecer mais de 2d10+10 dias na mesma cidade\n(ou vila, aldeia, povoado...) ou 1d4+2 meses no\nmesmo reino.\nDevotos de Valkaria também são proibidos de se\ncasar ou formar qualquer união estável."
+    },
+    {
+      "Dvindade": "Wynna",
+      "Descrição": "Assim como a\nmagia jamais deva ser negada para quem a busca,\ndevotos de Wynna devem praticar a bondade e a\ngenerosidade de sua deusa, jamais recusando um\npedido de ajuda de alguém inocente. Além disso,\ndevotos de Wynna são proibidos de matar seres\nmágicos (elfos, qareen, sílfides e outros a critério do\nmestre) e conjuradores arcanos."
+    }
+  ],
+  "Tamanho ": [
+    {
+      "Categoria de tamanho": "Minúsculo",
+      "Exemplos": "Falcão, rato, sílfide",
+      "Espaço Ocupado/ \nAlcance Natural": "1,5m",
+      "Modificador de\nFurtividade/Manobras": "5/–5"
+    },
+    {
+      "Categoria de tamanho": "Pequeno",
+      "Exemplos": "Cão, goblin, hynne",
+      "Espaço Ocupado/ \nAlcance Natural": "1,5m",
+      "Modificador de\nFurtividade/Manobras": "2/–2"
+    },
+    {
+      "Categoria de tamanho": "Médio",
+      "Exemplos": "Humano, anão, elfo",
+      "Espaço Ocupado/ \nAlcance Natural": "1,5m",
+      "Modificador de\nFurtividade/Manobras": 0
+    },
+    {
+      "Categoria de tamanho": "Grande",
+      "Exemplos": "Cavalo, ogro, serpe",
+      "Espaço Ocupado/ \nAlcance Natural": "3m",
+      "Modificador de\nFurtividade/Manobras": "–2/+2"
+    },
+    {
+      "Categoria de tamanho": "Enorme",
+      "Exemplos": "Ente, gigante, hidra",
+      "Espaço Ocupado/ \nAlcance Natural": "4,5m",
+      "Modificador de\nFurtividade/Manobras": "–5/+5"
+    },
+    {
+      "Categoria de tamanho": "Colossal",
+      "Exemplos": "Colosso, dragão, kraken",
+      "Espaço Ocupado/ \nAlcance Natural": "9m",
+      "Modificador de\nFurtividade/Manobras": "–10/+10"
+    }
+  ],
+  "Proeficiencia": [
+    {
+      "Coluna 1": "Arma simples",
+      "Coluna 2": "Armas de manejo fácil, como\nadagas, clavas e lanças. Todos os personagens sabem\nusar armas simples."
+    },
+    {
+      "Coluna 1": "Armas Marciais",
+      "Coluna 2": "Espadas, machados e outras\narmas de uso específico de combatentes. Bárbaros,\nbardos, bucaneiros, caçadores, cavaleiros, guerreiros,\nnobres e paladinos sabem usar armas marciais"
+    },
+    {
+      "Coluna 1": "Armas Exóticas",
+      "Coluna 2": "Armas difíceis de dominar,\ncomo a corrente de espinhos e a espada bastarda.\nExigem treinamento específico"
+    },
+    {
+      "Coluna 1": "Armas de Fogo",
+      "Coluna 2": "Armas de pólvora são raras\nem Arton, por isso exigem treinamento específico"
+    }
+  ],
+  "Magias": [
+    {
+      "Nome": "Abençoar\nAlimentos",
+      "Descrição": "Você purifica e abençoa uma porção de\ncomida ou dose de bebida. Isso torna\num alimento sujo, estragado ou envenenado\npróprio para consumo. Além\ndisso, se for consumido até o final da\nduração, o alimento oferece 5 PV temporários\nou 1 PM temporário (além de\nquaisquer bônus que já oferecesse).\nBônus de alimentação duram um dia e\ncada personagem só pode receber um\nbônus de alimentação por dia.",
+      "Escola": "Aburação",
+      "Execução": "Ação padrão",
+      "Duração": "cena",
+      "Alvo/area": "alimento para 1 criatura",
+      "Resistencia": "----",
+      "Custo": 1,
+      "Circulo": 1,
+      "Tipo de magia": "Divina "
+    },
+    {
+      "Nome": "Acalmar Animal",
+      "Descrição": "O animal fica prestativo em relação a\nvocê. Ele não fica sob seu controle, mas\npercebe suas palavras e ações da maneira\nmais favorável possível. Você recebe\n+10 nos testes de Adestramento e Diplomacia\nque fizer contra o animal.\nUm alvo hostil ou que esteja envolvido\nem um combate recebe +5 em seu teste\nde resistência. Se você ou seus aliados\ntomarem qualquer ação hostil contra o\nalvo, a magia é dissipada e ele retorna à\natitude que tinha antes (ou piorada, de\nacordo com o mestre). Se tratar bem o\nalvo, a atitude pode permanecer mesmo\napós o término da magia.",
+      "Escola": "Encantamento",
+      "Execução": "Ação padrão",
+      "Duração": "cena",
+      "Alvo/area": "1 animal",
+      "Resistencia": "Vontade anula",
+      "Custo": 1,
+      "Circulo": 1,
+      "Tipo de magia": "Divina "
+    },
+    {
+      "Nome": "Adaga Mental",
+      "Descrição": "Você manifesta e dispara uma adaga\nimaterial contra a mente do alvo, que\nsofre 2d6 pontos de dano psíquico e\nfica atordoado por uma rodada. Se passar\nno teste de resistência, sofre apenas\nmetade do dano e evita a condição.\nUma criatura só pode ficar atordoada\npor esta magia uma vez por cena.",
+      "Escola": "Encantamento",
+      "Execução": "Ação padrão",
+      "Duração": "instantânea",
+      "Alvo/area": "1 criatura",
+      "Resistencia": "Vontade parcial",
+      "Custo": 1,
+      "Circulo": 1,
+      "Tipo de magia": "Arcana"
+    },
+    {
+      "Nome": "Alarme",
+      "Descrição": "Você cria uma barreira protetora invisível\nque detecta qualquer criatura\nque tocar ou entrar na área protegida.\nAo lançar a magia, você pode escolher\nquais criaturas podem entrar na área\nsem ativar seus efeitos. Alarme pode\nemitir um aviso telepático ou sonoro,\ndecidido quando a magia é lançada.\nUm aviso telepático alerta apenas\nvocê, inclusive acordando-o se estiver\ndormindo, mas apenas se estiver a até\n1km da área protegida. Um aviso sonoro\nalerta todas as criaturas em alcance\nlongo.",
+      "Escola": "Aburação",
+      "Execução": "Ação padrão",
+      "Duração": "1 dia",
+      "Alvo/area": "esfera com 9 metros de raio",
+      "Resistencia": "----",
+      "Custo": 1,
+      "Circulo": 1,
+      "Tipo de magia": "Arcana"
+    },
+    {
+      "Nome": "Aliado Animal",
+      "Descrição": "Você cria um vínculo mental com um\nanimal prestativo em relação a você.\nO Aliado Animal obedece a você no\nmelhor de suas capacidades, mesmo\nque isso arrisque a vida dele. Ele funciona\ncomo um parceiro veterano, de\num tipo a sua escolha entre ajudante,\ncombatente, fortão, guardião, montaria\nou perseguidor.",
+      "Escola": "Encantamento",
+      "Execução": "Ação padrão",
+      "Duração": "1 dia",
+      "Alvo/area": "1 animal prestativo",
+      "Resistencia": "----",
+      "Custo": 3,
+      "Circulo": 2,
+      "Tipo de magia": "Divina "
+    },
+    {
+      "Nome": "Alterar Destino",
+      "Descrição": "Sua mente visualiza todas as possibilidades\nde um evento, permitindo\na você escolher o melhor curso de\nação. Você pode rolar novamente um\nteste de resistência com um bônus\nde +10 ou um inimigo deve rolar novamente\num ataque contra você com\numa penalidade de –10.",
+      "Escola": "Advinhação",
+      "Execução": "Reação.",
+      "Duração": "instantânea",
+      "Alvo/area": "você",
+      "Resistencia": "----",
+      "Custo": 15,
+      "Circulo": 5,
+      "Tipo de magia": "Arcana"
+    }
+  ],
+  "Tipos de magia": [
+    {
+      "Nome": "Magia Arcana",
+      "Descrição": "Manipula diretamente as\nenergias do mundo, permitindo ao conjurador violar\nas leis naturais e alterar a realidade. Este tipo de\nmágica pode ser dominado por estudo ou aptidão\nnatural. Seus efeitos costumam ser impressionantes,\ndestruidores e fantásticos — como produzir relâmpagos,\nmetamorfosear criaturas, transportar por\nlongas distâncias e criar imagens ilusórias."
+    },
+    {
+      "Nome": "Magia Divina",
+      "Descrição": "Provém de uma causa ou\nentidade poderosa — normalmente um deus maior.\nAtravés da devoção a essa causa ou entidade, o\nconjurador\nrecebe poder mágico. A magia divina\ngeralmente envolve proteção, fortalecimento e cura"
+    },
+    {
+      "Nome": "Magia universal",
+      "Descrição": "Podem ser utilizadas por conjuradores arcanos e clerigos/paladinos"
+    }
+  ],
+  "Temas": [
+    {
+      "Nome": "Drama ",
+      "Descrição": "Foco no desenvoilvimento dos personagens e role play, criando uma narrativa envolvente e emocionante"
+    },
+    {
+      "Nome": "Terror",
+      "Descrição": "Uma história pesada, envolvendo o lado mais sombrio do muindo de Arton, explorando terrores causados por pessoas ou os horrores da tormenta"
+    },
+    {
+      "Nome": "Ação",
+      "Descrição": "Para os jogadores que gostam de rolar iniciativa e matar monstros, são historias onde o combate é o centro da trama"
+    },
+    {
+      "Nome": "Aventura",
+      "Descrição": "Focado na exploração do mundo como um todo, conhecendo as historias e povoados diversos do mundo de Arton"
+    },
+    {
+      "Nome": "Militar",
+      "Descrição": "Conspirações, tramas politicas e batalhas massivas, historias onde os aventureiros irão fazer missões de espionagem e até controlar batalhões como comandantes"
+    }
+  ],
+  "Tipo de jogo": [
+    {
+      "Nome ": "One shot",
+      "Descrição": "jogo unico que acaba com uma sessão  de jogo"
+    },
+    {
+      "Nome ": "Campanha",
+      "Descrição": "Sequencia de jogos que desenvolve uma historia mais complexa "
+    }
+  ]
+}
