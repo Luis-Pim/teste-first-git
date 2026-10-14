@@ -12,7 +12,7 @@ const NAV: { href: string; label: string; icon: string; phase?: string }[] = [
   { href: "/planejamento", label: "Planejamento", icon: "◎" },
   { href: "/recomendacoes", label: "Recomendações", icon: "✦" },
   { href: "/simulador", label: "Simulador", icon: "↗" },
-  { href: "/assistente", label: "Assistente InvestAI", icon: "◌", phase: "Fase 3" },
+  { href: "/assistente", label: "Assistente InvestAI", icon: "◌" },
   { href: "/configuracoes", label: "Configurações", icon: "⚙" },
 ];
 

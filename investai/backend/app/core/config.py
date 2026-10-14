@@ -16,6 +16,8 @@ class Settings(BaseSettings):
     market_provider: str = "auto"
     brapi_token: str | None = Field(default=None, validation_alias=AliasChoices("INVESTAI_BRAPI_TOKEN", "BRAPI_TOKEN"))
     openai_api_key: str | None = Field(default=None, validation_alias=AliasChoices("INVESTAI_OPENAI_API_KEY", "OPENAI_API_KEY"))
+    openai_model: str = "gpt-4.1-mini"  # confirmar disponibilidade na conta (GET /v1/models)
+    openai_base_url: str = "https://api.openai.com/v1"
     brapi_base_url: str = "https://brapi.dev/api"
     bcb_base_url: str = "https://api.bcb.gov.br/dados/serie"
     http_timeout_seconds: float = 10.0

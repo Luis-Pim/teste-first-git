@@ -161,6 +161,46 @@ class BrapiProvider:
         return rep
 
 
+FUND_SUBTYPES = {"fii", "fi-agro", "fi-infra"}
+
+
+@dataclass
+class ListedFund:
+    ticker: str
+    name: str | None
+    sub_type: str
+    close: Decimal | None
+    volume: Decimal | None  # cotas negociadas no último pregão
+
+
+def list_funds(base_url: str, token: str | None = None, max_pages: int = 10, page_size: int = 100,
+               client: httpx.Client | None = None) -> list[ListedFund]:
+    """Lista FIIs, Fiagros e FI-Infra negociados (BRAPI /quote/list). Responde sem token (validado em 14/10/2026).
+    O campo de setor/subsetor da BRAPI não é confiável para FIIs (MXRF11 aparece como Logística):
+    o segmento vem do informe da CVM."""
+    client = client or httpx.Client(timeout=20.0)
+    headers = {"Authorization": f"Bearer {token}"} if token else {}
+    out: dict[str, ListedFund] = {}
+    for page in range(1, max_pages + 1):
+        try:
+            r = client.get(f"{base_url.rstrip('/')}/quote/list", headers=headers,
+                           params={"type": "fund", "limit": page_size, "page": page, "sortBy": "volume", "sortOrder": "desc"})
+        except httpx.HTTPError as e:
+            raise ProviderError(f"BRAPI indisponível: {e.__class__.__name__}") from e
+        if r.status_code != 200:
+            raise ProviderError(f"BRAPI HTTP {r.status_code}: {r.text[:160]}")
+        data = r.json() or {}
+        for it in data.get("stocks") or []:
+            sub = (it.get("subType") or "").lower()
+            t = (it.get("stock") or "").upper()
+            if sub in FUND_SUBTYPES and t and t not in out:
+                out[t] = ListedFund(t, it.get("name"), sub, D(it["close"]) if it.get("close") is not None else None,
+                                    D(it["volume"]) if it.get("volume") is not None else None)
+        if not data.get("hasNextPage"):
+            break
+    return list(out.values())
+
+
 class BcbSgsClient:
     """Séries do Banco Central (SGS). Público e gratuito."""
 

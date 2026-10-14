@@ -138,6 +138,25 @@ class FundIndicator(Base):
     asset: Mapped[Asset] = relationship(lazy="joined")
 
 
+class FundUniverse(Base):
+    """Todos os fundos listados (BRAPI) enriquecidos com o informe da CVM. Base da triagem de fundos novos."""
+
+    __tablename__ = "fund_universe"
+    ticker: Mapped[str] = mapped_column(String(16), primary_key=True)
+    name: Mapped[str | None] = mapped_column(String(200))
+    sub_type: Mapped[str] = mapped_column(String(16))  # fii, fi-agro, fi-infra
+    close: Mapped[Decimal | None] = mapped_column(PRICE)
+    volume: Mapped[Decimal | None] = mapped_column(Numeric(24, 2))
+    listed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))  # quando a BRAPI foi lida
+    cnpj: Mapped[str | None] = mapped_column(String(20))
+    segment: Mapped[str | None] = mapped_column(String(80))
+    mandate: Mapped[str | None] = mapped_column(String(80))
+    net_worth: Mapped[Decimal | None] = mapped_column(Numeric(24, 2))  # patrimônio líquido
+    shareholders: Mapped[int | None] = mapped_column(Integer)
+    vp_per_share: Mapped[Decimal | None] = mapped_column(PRICE)
+    cvm_ref_date: Mapped[date | None] = mapped_column(Date)
+
+
 class StrategyConfig(Base):
     __tablename__ = "strategy_configs"
     id: Mapped[int] = mapped_column(primary_key=True)

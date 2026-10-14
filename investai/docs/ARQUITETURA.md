@@ -72,7 +72,7 @@ Cache e controle de requisições: cotações buscadas há menos de `INVESTAI_QU
 | **1 — MVP** | Interface web, carteira, banco + migrações, movimentações (todos os tipos), posição e preço médio, dashboard, dividendos registrados + anúncios + calendário (3 categorias), planejamento mensal com saldo residual, simulador (3 cenários + metas), importação CSV/Excel com deduplicação e conciliação, alertas básicos, adaptadores BRAPI/BCB | ✅ |
 | **2 — Recomendação + dados de mercado** | Motor de recomendações explicável (3 perfis, vetos de "não comprar", alocação respeitando limites); indicadores por fundo com fonte (VP/cota, vacância, inadimplência, alavancagem); BRAPI com volume, histórico diário e data-ex (formato validado contra a resposta real); informe mensal da CVM → P/VP; tela de Recomendações e indicadores na tela do fundo | ✅ motor e adaptadores · ⏳ validar CVM e BRAPI com token real |
 | **2b — Mercado** | Job agendado para cotações, proventos e CVM; séries CDI/IPCA/IFIX e comparação; TWR | próximo |
-| **3 — Inteligência** | Advisor com ferramentas tipadas sobre a API + RAG de relatórios gerenciais; respostas com data de referência, fontes e limitações; alertas inteligentes (queda de rendimento, vacância, emissões) e e-mail | — |
+| **3 — Inteligência** | ✅ Triagem de fundos novos (universo BRAPI + CVM) e Assistente com ferramentas sobre a API (OpenAI). ⏳ RAG de relatórios gerenciais; alertas inteligentes e e-mail | em andamento |
 | **4 — Evolução** | Ações, ETFs, Tesouro, CDB; múltiplas carteiras; consolidação; integração com corretoras quando autorizada | — |
 
 ## 5. Estimativa de custos (AWS sa-east-1)
@@ -126,7 +126,19 @@ Fator sem dado não entra na nota: o peso é redistribuído e a **cobertura** é
 
 **Alocação:** percorre os elegíveis por nota e compra o máximo de cotas que mantém fundo e segmento dentro dos limites; a sobra passa ao próximo (até 3 sugestões). Cada sugestão traz cotas, valor, saldo, renda incremental estimada, peso após a compra, justificativa, riscos e a tabela de fatores com o dado e a fonte usados.
 
-## 8. Limitações conhecidas
+## 8. Fundos novos e Assistente
+
+**Triagem** (`domain/screener.py`, `services/universe_service.py`):
+- **Universo:** todos os FIIs, Fiagros e FI-Infra listados (BRAPI `/quote/list`, sem token; 385 fundos em 14/10/2026). O segmento, o patrimônio, os cotistas e o VP vêm do informe mensal da CVM, casado pelo ISIN, porque o setor da BRAPI não é confiável para FIIs.
+- **Filtros padrão:** liquidez no pregão ≥ R$ 300 mil, patrimônio ≥ R$ 300 mi, ≥ 10 mil cotistas, P/VP entre 0,70 e 1,10, exclui o que já está na carteira. Cada reprovação tem motivo.
+- **Avaliação:** os finalistas recebem cotação, 12 meses de histórico e proventos (BRAPI com token) e entram no mesmo motor de recomendação, como ativos inativos (não poluem a lista de acompanhamento). Sem dados suficientes, o motor recusa recomendar.
+
+**Assistente** (`assistant/agent.py`, `assistant/tools.py`):
+- **Funcionamento:** loop de chamadas de ferramentas na API Chat Completions da OpenAI. A chave vem de `OPENAI_API_KEY`; o modelo, de `INVESTAI_OPENAI_MODEL` (padrão `gpt-4.1-mini`, a confirmar na conta). Máximo de 6 rodadas por pergunta.
+- **Ferramentas:** carteira, orçamento, proventos, recomendações, triagem de fundos novos, avaliação de candidatos, simulador, lista de acompanhamento e alertas. O modelo não tem SQL nem internet.
+- **Regras do prompt:** nenhum número sem ferramenta; avisar quando há dados DEMO; fundos novos só se o motor os considerar elegíveis; fontes e limitações ao final. A interface mostra quais ferramentas cada resposta consultou.
+
+## 9. Limitações conhecidas
 
 - Sem autenticação (uso local, usuário único). JWT/Cognito entra antes de qualquer deploy público.
 - Rentabilidade total é **retorno simples** sobre capital aplicado; TWR e comparação com CDI/IFIX/IPCA ficam para a Fase 2.

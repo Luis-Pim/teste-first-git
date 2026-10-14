@@ -41,14 +41,17 @@ def _fmt(d: date) -> str:
     return d.strftime("%d/%m/%Y")
 
 
-def build_metrics(db: Session, pid: int, today: date) -> tuple[list[FundMetrics], PortfolioContext, dict]:
+def build_metrics(db: Session, pid: int, today: date, extra_tickers: list[str] | None = None) -> tuple[list[FundMetrics], PortfolioContext, dict]:
     pv = svc.positions_view(db, pid, today)
     positions = {p["ticker"]: p for p in pv["positions"]}
     quotes12 = _quotes_by_ticker(db, add_months(today, -12))
     latest = svc.latest_quotes(db)
     indicators = _indicators_by_ticker(db)
     strategy = svc.get_strategy(db, pid, today)
-    assets = list(db.scalars(select(Asset).where(Asset.is_active.is_(True)).order_by(Asset.ticker)))
+    cond = Asset.is_active.is_(True)
+    if extra_tickers:
+        cond = cond | Asset.ticker.in_(extra_tickers)
+    assets = list(db.scalars(select(Asset).where(cond).order_by(Asset.ticker)))
     data_notes: list[str] = []
     demo_sources: set[str] = set()
 
@@ -155,8 +158,9 @@ def build_metrics(db: Session, pid: int, today: date) -> tuple[list[FundMetrics]
     return metrics, ctx, meta
 
 
-def recommendations(db: Session, pid: int, today: date, profile: InvestorProfile | None, budget=None, max_picks: int = 3) -> dict:
-    metrics, ctx, meta = build_metrics(db, pid, today)
+def recommendations(db: Session, pid: int, today: date, profile: InvestorProfile | None, budget=None, max_picks: int = 3,
+                    extra_tickers: list[str] | None = None) -> dict:
+    metrics, ctx, meta = build_metrics(db, pid, today, extra_tickers)
     profile = profile or InvestorProfile(meta["profile_default"])
     budget_source = "informado"
     if budget is None:

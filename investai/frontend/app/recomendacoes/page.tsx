@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Badge, Card, Empty, ErrorBox, Field, Loading, Notes, PageHeader, Stat, Td, Th, btnCls, inputCls } from "@/components/ui";
+import NewFunds from "@/components/NewFunds";
 import { useApi } from "@/lib/api";
 import { date, money, pct } from "@/lib/format";
 
@@ -327,6 +328,7 @@ export default function RecomendacoesPage() {
           <Notes items={["Limites de concentração por fundo e por segmento vêm de Planejamento."]} />
         </Card>
       </div>
+      <NewFunds profile={current} />
     </>
   );
 }
