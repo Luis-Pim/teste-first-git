@@ -46,7 +46,8 @@ Preços médios **não foram informados** (saldo inicial sem custo; P/L e YoC ap
 
 ## Próximos passos (nesta ordem)
 
-1. Preparar o ambiente (abaixo) e conferir, sem imprimir valores, se `INVESTAI_BRAPI_TOKEN` e `OPENAI_API_KEY` existem e se `brapi.dev`, `api.openai.com`, `dados.cvm.gov.br` e `api.bcb.gov.br` respondem.
+1. Preparar o ambiente (abaixo) e rodar `cd investai/backend && .venv/bin/python -m app.diagnostico`: mostra, sem imprimir valores, se `INVESTAI_BRAPI_TOKEN` e `OPENAI_API_KEY` existem, se `brapi.dev`, `api.openai.com`, `dados.cvm.gov.br` e `api.bcb.gov.br` respondem e (com a chave) se o modelo da OpenAI existe na conta.
+   - Sessão de 14/10/2026: as duas chaves estavam AUSENTES e o proxy de rede bloqueou os quatro domínios (403). O usuário precisa liberá-los em Network access (Allowed domains) e cadastrar as chaves no ambiente de nuvem antes dos passos 2–5.
 2. Confirmar o modelo da OpenAI e ajustar o padrão se necessário.
 3. Baixar o informe real da CVM e validar `app/market/cvm.py` (`parse_zip` e `parse_universe`); ajustar colunas e testes.
 4. Rodar `python -m app.seed --clear-demo`, depois Configurações → Atualizar cotações + histórico 12 meses + proventos (BRAPI) e Importar VP da CVM, para trocar DEMO por dados reais.
