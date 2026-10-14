@@ -21,6 +21,7 @@ from dataclasses import dataclass, field
 from datetime import date, datetime
 from decimal import Decimal
 from typing import Protocol
+from zoneinfo import ZoneInfo
 
 import httpx
 
@@ -37,6 +38,7 @@ class QuoteResult:
     quote_date: date
     close: Decimal
     source: str
+    volume: Decimal | None = None
 
 
 @dataclass
@@ -47,6 +49,7 @@ class DividendResult:
     payment_date: date
     kind: str
     source: str
+    ex_date: date | None = None
 
 
 @dataclass
@@ -60,7 +63,7 @@ class MarketDataProvider(Protocol):
     name: str
     capabilities: set[str]
 
-    def fetch(self, tickers: list[str], with_dividends: bool = False) -> FetchReport: ...
+    def fetch(self, tickers: list[str], with_dividends: bool = False, history_range: str | None = None) -> FetchReport: ...
 
 
 class ManualProvider:
@@ -69,15 +72,19 @@ class ManualProvider:
     name = "MANUAL"
     capabilities: set[str] = set()
 
-    def fetch(self, tickers, with_dividends=False) -> FetchReport:
+    def fetch(self, tickers, with_dividends=False, history_range=None) -> FetchReport:
         return FetchReport(missing={t: "Provedor manual: cadastre a cotação na tela do ativo." for t in tickers})
 
 
+BR_TZ = ZoneInfo("America/Sao_Paulo")
+
+
 def _parse_iso_date(v) -> date | None:
+    """BRAPI devolve datas em UTC (ex.: 2026-12-21T03:00:00Z = meia-noite de Brasília)."""
     if not v:
         return None
     try:
-        return datetime.fromisoformat(str(v).replace("Z", "+00:00")).date()
+        return datetime.fromisoformat(str(v).replace("Z", "+00:00")).astimezone(BR_TZ).date()
     except ValueError:
         return None
 
@@ -91,13 +98,20 @@ class BrapiProvider:
         self.base_url = base_url.rstrip("/")
         self.client = client or httpx.Client(timeout=timeout)
 
-    def fetch(self, tickers, with_dividends=False) -> FetchReport:
+    def fetch(self, tickers, with_dividends=False, history_range=None) -> FetchReport:
+        """Formato validado contra a resposta real de /quote (out/2026): regularMarketPrice/Time/Volume,
+        historicalDataPrice[{date (epoch), close, volume}] e dividendsData.cashDividends[{rate,
+        lastDatePrior (data-com), exDate, paymentDate, label}]."""
         rep = FetchReport()
         if not self.token:
             rep.missing = {t: "BRAPI sem token configurado (INVESTAI_BRAPI_TOKEN)." for t in tickers}
             return rep
         for t in tickers:  # uma requisição por ativo: o plano gratuito limita múltiplos tickers por chamada
-            params = {"dividends": "true"} if with_dividends else {}
+            params = {}
+            if with_dividends:
+                params["dividends"] = "true"
+            if history_range:
+                params.update({"range": history_range, "interval": "1d"})
             try:
                 r = self.client.get(f"{self.base_url}/quote/{t}", params=params, headers={"Authorization": f"Bearer {self.token}"})
             except httpx.HTTPError as e:
@@ -113,10 +127,23 @@ class BrapiProvider:
             item = results[0]
             price = item.get("regularMarketPrice")
             qdate = _parse_iso_date(item.get("regularMarketTime"))
+            vol = item.get("regularMarketVolume")
             if price is None or qdate is None:
                 rep.missing[t] = "Cotação ausente na resposta."
             else:
-                rep.quotes.append(QuoteResult(t, qdate, D(price), self.name))
+                rep.quotes.append(QuoteResult(t, qdate, D(price), self.name, D(vol) if vol is not None else None))
+            if history_range:
+                hist = item.get("historicalDataPrice")
+                if not hist:
+                    rep.missing.setdefault(t, f"Histórico ({history_range}) indisponível neste plano/endpoint.")
+                for h in hist or []:
+                    if h.get("close") is None or h.get("date") is None:
+                        continue
+                    d = datetime.fromtimestamp(int(h["date"]), BR_TZ).date()
+                    if qdate and d == qdate:
+                        continue  # o pregão corrente já veio em regularMarket*
+                    v = h.get("volume")
+                    rep.quotes.append(QuoteResult(t, d, D(h["close"]), self.name, D(v) if v is not None else None))
             if with_dividends:
                 dd = item.get("dividendsData")
                 if not dd:
@@ -130,7 +157,7 @@ class BrapiProvider:
                         continue
                     label = (c.get("label") or "").upper()
                     kind = "AMORTIZACAO" if "AMORT" in label else "RENDIMENTO"
-                    rep.dividends.append(DividendResult(t, D(rate), com, pay, kind, self.name))
+                    rep.dividends.append(DividendResult(t, D(rate), com, pay, kind, self.name, _parse_iso_date(c.get("exDate"))))
         return rep
 
 
@@ -157,6 +184,6 @@ class BcbSgsClient:
 
 
 def get_provider(settings) -> MarketDataProvider:
-    if settings.market_provider == "brapi":
+    if settings.market_provider == "brapi" or (settings.market_provider == "auto" and settings.brapi_token):
         return BrapiProvider(settings.brapi_token, settings.brapi_base_url, settings.http_timeout_seconds)
     return ManualProvider()

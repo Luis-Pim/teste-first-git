@@ -10,7 +10,7 @@ const NAV: { href: string; label: string; icon: string; phase?: string }[] = [
   { href: "/dividendos", label: "Dividendos", icon: "◷" },
   { href: "/movimentacoes", label: "Movimentações", icon: "⇅" },
   { href: "/planejamento", label: "Planejamento", icon: "◎" },
-  { href: "/recomendacoes", label: "Recomendações", icon: "✦", phase: "Fase 3" },
+  { href: "/recomendacoes", label: "Recomendações", icon: "✦" },
   { href: "/simulador", label: "Simulador", icon: "↗" },
   { href: "/assistente", label: "Assistente InvestAI", icon: "◌", phase: "Fase 3" },
   { href: "/configuracoes", label: "Configurações", icon: "⚙" },

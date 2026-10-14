@@ -37,10 +37,23 @@ def upsert_quote(body: QuoteIn, db: Session = Depends(get_db)):
 
 
 @router.post("/market/refresh")
-def market_refresh(pid: int = PID, with_dividends: bool = False, db: Session = Depends(get_db)):
+def market_refresh(
+    pid: int = PID,
+    with_dividends: bool = False,
+    history_range: str | None = Query(None, pattern="^(1mo|3mo|6mo|1y|2y)$", description="Ex.: 1y para liquidez e preço médio de 12 meses"),
+    db: Session = Depends(get_db),
+):
     s = get_settings()
     provider = get_provider(s)
-    return market_service.refresh(db, provider, market_service.held_tickers(db, pid), s.quote_cache_minutes, with_dividends)
+    tickers = sorted(set(market_service.held_tickers(db, pid)) | {a.ticker for a in db.scalars(select(Asset).where(Asset.is_active.is_(True)))})
+    return market_service.refresh(db, provider, tickers, s.quote_cache_minutes, with_dividends, history_range)
+
+
+@router.post("/market/cvm")
+def market_cvm(pid: int = PID, year: int | None = None, db: Session = Depends(get_db)):
+    """Importa o VP por cota do informe mensal da CVM para os ativos da carteira e da lista de acompanhamento."""
+    tickers = sorted({a.ticker for a in db.scalars(select(Asset).where(Asset.is_active.is_(True)))})
+    return market_service.ingest_cvm(db, tickers, year or svc.today_br().year)
 
 
 @router.get("/market/logs")
@@ -56,18 +69,21 @@ def market_logs(db: Session = Depends(get_db)):
 @router.get("/market/sources")
 def market_sources():
     s = get_settings()
+    active = get_provider(s).name
     return {
-        "active_provider": s.market_provider,
+        "active_provider": active,
         "brapi_token_configured": bool(s.brapi_token),
+        "openai_key_configured": bool(s.openai_api_key),
         "sources": [
-            {"name": "Manual", "status": "ATIVO", "provides": ["cotações", "proventos"], "notes": "Cadastro pelo usuário; sempre disponível."},
-            {"name": "BRAPI", "status": "ADAPTADOR PRONTO", "provides": ["cotação", "proventos (depende do plano)"],
-             "notes": "Requer token. Plano gratuito tem limite mensal e pode não incluir proventos/histórico de FIIs."},
+            {"name": "Manual", "status": "ATIVO", "provides": ["cotações", "proventos", "indicadores do relatório gerencial"], "notes": "Cadastro pelo usuário; sempre disponível."},
+            {"name": "BRAPI", "status": "ATIVO" if active == "BRAPI" else "ADAPTADOR PRONTO", "provides": ["cotação e volume", "histórico diário", "proventos (data-com, data-ex, pagamento)"],
+             "notes": "Formato validado contra a resposta real em 14/10/2026. Requer token; o plano gratuito tem limite mensal."},
+            {"name": "CVM Dados Abertos", "status": "ADAPTADOR PRONTO", "provides": ["valor patrimonial por cota (P/VP)", "CNPJ do fundo"],
+             "notes": "Informe mensal de FII. Validar contra o arquivo real quando o domínio estiver liberado."},
             {"name": "BCB SGS", "status": "ADAPTADOR PRONTO", "provides": ["CDI (12)", "Selic (11)", "IPCA (433)"], "notes": "Público, sem token."},
-            {"name": "IBGE SIDRA", "status": "FASE 2", "provides": ["IPCA oficial"], "notes": "Alternativa ao SGS 433."},
-            {"name": "CVM Dados Abertos", "status": "FASE 2", "provides": ["informe mensal FII: PL, VP/cota, cotistas"], "notes": "Arquivos CSV mensais."},
-            {"name": "B3", "status": "FASE 2", "provides": ["IFIX", "eventos corporativos"], "notes": "Uso de dados sujeito aos termos da B3."},
-            {"name": "Relatórios gerenciais", "status": "FASE 3", "provides": ["vacância", "inadimplência", "alavancagem"], "notes": "PDFs das gestoras → RAG."},
+            {"name": "IBGE SIDRA", "status": "PLANEJADO", "provides": ["IPCA oficial"], "notes": "Alternativa ao SGS 433."},
+            {"name": "B3", "status": "PLANEJADO", "provides": ["IFIX", "eventos corporativos"], "notes": "Uso de dados sujeito aos termos da B3."},
+            {"name": "Relatórios gerenciais", "status": "MANUAL / RAG PLANEJADO", "provides": ["vacância", "inadimplência", "alavancagem"], "notes": "Hoje: lançamento manual com fonte na tela do fundo."},
         ],
     }
 
@@ -137,9 +153,23 @@ def asset_detail(ticker: str, pid: int = PID, today: date = Depends(ref_date), d
         "position": pos,
         "dividend_stats": svc.stats_for(db, pid, ticker, today),
         "quotes": list_quotes(ticker, db)[:120],
-        "indicators": {
-            "available": False,
-            "fields": ["P/VP", "vacância", "inadimplência", "alavancagem", "liquidez média diária"],
-            "reason": "Indicadores fundamentalistas dependem das integrações CVM/relatórios (Fases 2 e 3).",
-        },
+        "indicators": _indicator_view(db, a, pos),
+    }
+
+
+def _indicator_view(db: Session, a: Asset, pos: dict | None) -> dict:
+    from app.models import FundIndicator
+
+    rows = list(db.scalars(select(FundIndicator).where(FundIndicator.asset_id == a.id).order_by(FundIndicator.ref_date.desc())))
+    latest_vp = next((r for r in rows if r.vp_per_share is not None), None)
+    price = pos["price"] if pos else None
+    return {
+        "available": bool(rows),
+        "pvp": (price / latest_vp.vp_per_share) if (price and latest_vp) else None,
+        "rows": [
+            {"id": r.id, "ref_date": r.ref_date, "vp_per_share": r.vp_per_share, "vacancy": r.vacancy, "default_rate": r.default_rate,
+             "leverage": r.leverage, "source": r.source, "source_url": r.source_url, "notes": r.notes}
+            for r in rows
+        ],
+        "reason": None if rows else "Sem indicadores: importe o informe da CVM em Configurações ou lance os dados do relatório gerencial.",
     }

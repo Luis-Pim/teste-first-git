@@ -96,6 +96,7 @@ class PriceQuote(Base):
     asset_id: Mapped[int] = mapped_column(ForeignKey("assets.id", ondelete="CASCADE"), index=True)
     quote_date: Mapped[date] = mapped_column(Date, index=True)
     close: Mapped[Decimal] = mapped_column(PRICE)
+    volume: Mapped[Decimal | None] = mapped_column(Numeric(24, 2))  # cotas negociadas no dia (liquidez)
     source: Mapped[str] = mapped_column(String(40))  # MANUAL, BRAPI, B3, DEMO...
     fetched_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
@@ -112,6 +113,26 @@ class DividendAnnouncement(Base):
     payment_date: Mapped[date] = mapped_column(Date, index=True)
     source: Mapped[str] = mapped_column(String(40), default="MANUAL")
     source_url: Mapped[str | None] = mapped_column(String(500))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+    asset: Mapped[Asset] = relationship(lazy="joined")
+
+
+class FundIndicator(Base):
+    """Indicadores fundamentalistas por data de referência, sempre com fonte (CVM, relatório gerencial, manual)."""
+
+    __tablename__ = "fund_indicators"
+    __table_args__ = (UniqueConstraint("asset_id", "ref_date", "source", name="uq_indicator_asset_date_source"),)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    asset_id: Mapped[int] = mapped_column(ForeignKey("assets.id", ondelete="CASCADE"), index=True)
+    ref_date: Mapped[date] = mapped_column(Date, index=True)
+    vp_per_share: Mapped[Decimal | None] = mapped_column(PRICE)
+    vacancy: Mapped[Decimal | None] = mapped_column(PCT)
+    default_rate: Mapped[Decimal | None] = mapped_column(PCT)
+    leverage: Mapped[Decimal | None] = mapped_column(PCT)
+    source: Mapped[str] = mapped_column(String(40), default="MANUAL")
+    source_url: Mapped[str | None] = mapped_column(String(500))
+    notes: Mapped[str | None] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
 
     asset: Mapped[Asset] = relationship(lazy="joined")

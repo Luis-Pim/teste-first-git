@@ -4,7 +4,7 @@ Plataforma de acompanhamento, análise e planejamento de investimentos pessoais 
 
 > Ferramenta de acompanhamento e apoio à decisão. **Não executa ordens reais** e não constitui recomendação de investimento.
 
-**Status: Fase 1 (MVP funcional) concluída.** Veja [docs/ARQUITETURA.md](docs/ARQUITETURA.md) para arquitetura, modelo de dados, fontes, custos e roadmap.
+**Status: Fase 1 concluída; Fase 2 (motor de recomendação + dados de mercado) implementada, aguardando validação com token da BRAPI e acesso à CVM.** Veja [docs/ARQUITETURA.md](docs/ARQUITETURA.md) para arquitetura, modelo de dados, fontes, custos e roadmap.
 
 ## Stack
 
@@ -57,7 +57,7 @@ npm run dev
 ### Testes
 
 ```bash
-cd backend && pytest -q          # 47 testes: preço médio, vendas parciais, subscrições,
+cd backend && pytest -q          # 65 testes: preço médio, vendas parciais, subscrições, recomendação,
                                  # data-com, orçamento, simulador, importação/duplicidade, API
 cd frontend && npm run typecheck && npm run build
 ```

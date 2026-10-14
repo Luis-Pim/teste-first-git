@@ -18,7 +18,7 @@ from sqlalchemy import delete, select
 from app.core.db import SessionLocal
 from app.domain.dividends import add_months
 from app.domain.enums import AssetClass, TxnStatus, TxnType
-from app.models import Asset, DividendAnnouncement, PriceQuote, StrategyConfig, Transaction
+from app.models import Asset, DividendAnnouncement, FundIndicator, PriceQuote, StrategyConfig, Transaction
 from app.services.portfolio_service import DEFAULT_PORTFOLIO_ID, ensure_portfolio
 
 ASSETS = [
@@ -42,6 +42,18 @@ DEMO = {
     "SNEL11": (Decimal("8.70"), Decimal("0.12")),
     "VILG11": (Decimal("92.30"), Decimal("0.70")),
     "XPML11": (Decimal("106.80"), Decimal("0.92")),
+}
+
+
+# (VP/cota, cotas negociadas/dia, vacância, inadimplência, alavancagem) — ILUSTRATIVOS, fonte "DEMO".
+DEMO_INDICATORS = {
+    "KNCR11": (Decimal("103.50"), Decimal("60000"), None, Decimal("0.01"), Decimal("0.05")),
+    "KNRI11": (Decimal("162.00"), Decimal("25000"), Decimal("0.06"), Decimal("0.01"), Decimal("0.08")),
+    "MXRF11": (Decimal("9.55"), Decimal("900000"), None, Decimal("0.02"), Decimal("0.10")),
+    "RURA11": (Decimal("9.90"), Decimal("120000"), None, Decimal("0.03"), Decimal("0.12")),
+    "SNEL11": (Decimal("9.40"), Decimal("90000"), None, Decimal("0.00"), Decimal("0.20")),
+    "VILG11": (Decimal("108.00"), Decimal("15000"), Decimal("0.09"), Decimal("0.02"), Decimal("0.18")),
+    "XPML11": (Decimal("112.00"), Decimal("50000"), Decimal("0.05"), Decimal("0.02"), Decimal("0.15")),
 }
 
 
@@ -93,8 +105,13 @@ def seed_demo_market(db, today: date) -> None:
         a = db.scalar(select(Asset).where(Asset.ticker == ticker))
         if a is None:
             continue
+        vp, volume, vacancy, default, leverage = DEMO_INDICATORS[ticker]
         if not db.scalar(select(PriceQuote).where(PriceQuote.asset_id == a.id, PriceQuote.source == "DEMO")):
-            db.add(PriceQuote(asset_id=a.id, quote_date=today - timedelta(days=1), close=price, source="DEMO"))
+            db.add(PriceQuote(asset_id=a.id, quote_date=today - timedelta(days=1), close=price, volume=volume, source="DEMO"))
+        if not db.scalar(select(FundIndicator).where(FundIndicator.asset_id == a.id, FundIndicator.source == "DEMO")):
+            db.add(FundIndicator(asset_id=a.id, ref_date=date(today.year, today.month, 1) - timedelta(days=1), vp_per_share=vp,
+                                 vacancy=vacancy, default_rate=default, leverage=leverage, source="DEMO",
+                                 notes="Valor ilustrativo para testar o motor de recomendação."))
         first = date(today.year, today.month, 1)
         for i in range(-11, 1):
             m = add_months(first, i)
@@ -112,6 +129,7 @@ def seed_demo_market(db, today: date) -> None:
 def clear_demo(db) -> None:
     db.execute(delete(PriceQuote).where(PriceQuote.source == "DEMO"))
     db.execute(delete(DividendAnnouncement).where(DividendAnnouncement.source == "DEMO"))
+    db.execute(delete(FundIndicator).where(FundIndicator.source == "DEMO"))
     db.commit()
     print("Dados DEMO removidos.")
 

@@ -70,8 +70,9 @@ Cache e controle de requisições: cotações buscadas há menos de `INVESTAI_QU
 | Fase | Entregas | Status |
 |---|---|---|
 | **1 — MVP** | Interface web, carteira, banco + migrações, movimentações (todos os tipos), posição e preço médio, dashboard, dividendos registrados + anúncios + calendário (3 categorias), planejamento mensal com saldo residual, simulador (3 cenários + metas), importação CSV/Excel com deduplicação e conciliação, alertas básicos, adaptadores BRAPI/BCB | ✅ |
-| **2 — Mercado** | Job agendado (APScheduler/EventBridge) para cotações e proventos; séries CDI/IPCA/IFIX e comparação; informe CVM → P/VP; histórico de preços; relatórios de evolução; TWR (rentabilidade ponderada no tempo) | próximo |
-| **3 — Inteligência** | Motor de recomendações explicável (3 perfis, pode recomendar *não comprar*); concentração e comparação entre fundos; Advisor com ferramentas tipadas sobre a API + RAG de relatórios; respostas com data de referência, fontes e limitações; alertas inteligentes (queda de rendimento, vacância, emissões) e e-mail (SES) | — |
+| **2 — Recomendação + dados de mercado** | Motor de recomendações explicável (3 perfis, vetos de "não comprar", alocação respeitando limites); indicadores por fundo com fonte (VP/cota, vacância, inadimplência, alavancagem); BRAPI com volume, histórico diário e data-ex (formato validado contra a resposta real); informe mensal da CVM → P/VP; tela de Recomendações e indicadores na tela do fundo | ✅ motor e adaptadores · ⏳ validar CVM e BRAPI com token real |
+| **2b — Mercado** | Job agendado para cotações, proventos e CVM; séries CDI/IPCA/IFIX e comparação; TWR | próximo |
+| **3 — Inteligência** | Advisor com ferramentas tipadas sobre a API + RAG de relatórios gerenciais; respostas com data de referência, fontes e limitações; alertas inteligentes (queda de rendimento, vacância, emissões) e e-mail | — |
 | **4 — Evolução** | Ações, ETFs, Tesouro, CDB; múltiplas carteiras; consolidação; integração com corretoras quando autorizada | — |
 
 ## 5. Estimativa de custos (AWS sa-east-1)
@@ -105,7 +106,27 @@ Recomendação: começar pela opção A com alerta de orçamento em US$ 20; migr
 | 12 | Nenhum dado fictício sem identificação | dados DEMO com `source=DEMO` e selo na UI |
 | 13 | Nenhuma chave no código | `.env` / variáveis `INVESTAI_*` |
 
-## 7. Limitações conhecidas do MVP
+## 7. Motor de recomendação (Fase 2)
+
+Código: `backend/app/domain/recommendation.py` (puro, testado em `tests/test_recommendation.py`).
+
+| Fator | Nota 0–100 | Conservador | Equilibrado | Renda |
+|---|---|---|---|---|
+| P/VP (e vs. mediana própria de 12 meses) | 0,85 → 100 · 1,00 → 70 · 1,15 → 0 | 15% | 20% | 15% |
+| Dividend yield 12m | 6% → 0 · 12% → 100 | 5% | 15% | 30% |
+| Regularidade, estabilidade (CV) e tendência dos rendimentos | composição 50/30/20 | 25% | 20% | 25% |
+| Liquidez diária (R$) | 300 mil → 0 · 5 mi → 100 | 15% | 10% | 10% |
+| Efeito na diversificação (fundo e segmento após a compra) | ≤ metade do limite → 100 · no limite → 0 | 20% | 15% | 5% |
+| Vacância, inadimplência, alavancagem | média das disponíveis | 15% | 15% | 10% |
+| Preço vs. média de 12 meses | −10% → 100 · +10% → 0 | 5% | 5% | 5% |
+
+Fator sem dado não entra na nota: o peso é redistribuído e a **cobertura** é exibida. Com cobertura abaixo de 50%, o fundo não é recomendado.
+
+**Vetos ("não comprar")**, que nenhuma nota compensa: corte de rendimentos (últimos 3 meses vs. anteriores ≤ −15%, −12% no perfil Renda); P/VP acima de 1,05 (Conservador) ou 1,10; liquidez abaixo de R$ 300 mil/dia (R$ 500 mil no Conservador); vacância, inadimplência ou alavancagem acima dos limites; fundo ou segmento acima do limite de concentração de Planejamento; sem cotação.
+
+**Alocação:** percorre os elegíveis por nota e compra o máximo de cotas que mantém fundo e segmento dentro dos limites; a sobra passa ao próximo (até 3 sugestões). Cada sugestão traz cotas, valor, saldo, renda incremental estimada, peso após a compra, justificativa, riscos e a tabela de fatores com o dado e a fonte usados.
+
+## 8. Limitações conhecidas
 
 - Sem autenticação (uso local, usuário único). JWT/Cognito entra antes de qualquer deploy público.
 - Rentabilidade total é **retorno simples** sobre capital aplicado; TWR e comparação com CDI/IFIX/IPCA ficam para a Fase 2.

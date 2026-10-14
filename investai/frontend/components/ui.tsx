@@ -128,7 +128,8 @@ export function Th({ children, right }: { children?: ReactNode; right?: boolean 
 }
 
 export function Td({ children, right, className = "" }: { children?: ReactNode; right?: boolean; className?: string }) {
-  return <td className={`whitespace-nowrap px-3 py-2.5 text-sm ${right ? "text-right tabular-nums" : ""} ${className}`}>{children}</td>;
+  const wrap = className.includes("whitespace-") ? "" : "whitespace-nowrap";
+  return <td className={`${wrap} px-3 py-2.5 text-sm ${right ? "text-right tabular-nums" : ""} ${className}`}>{children}</td>;
 }
 
 /** Barra horizontal de participação (alocação). Um único tom; rótulos em tinta de texto. */

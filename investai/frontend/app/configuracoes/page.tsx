@@ -25,9 +25,22 @@ export default function ConfiguracoesPage() {
   if (src.error) return <ErrorBox error={src.error} />;
   if (!src.data) return <Loading />;
 
-  async function refresh(withDiv: boolean) {
+  async function cvmImport() {
     try {
-      const r = await api<{ quotes_saved: number; dividends_saved: number; missing: Record<string, string> }>(`/api/market/refresh?with_dividends=${withDiv}`, { method: "POST" });
+      const r = await api<{ saved: number; warnings: string[] }>("/api/market/cvm", { method: "POST" });
+      setResult(`CVM: ${r.saved} valor(es) patrimonial(is) importado(s).${r.warnings.length ? ` Avisos: ${r.warnings.join(" ")}` : ""}`);
+      logs.reload();
+    } catch (e) {
+      setResult((e as Error).message);
+    }
+  }
+
+  async function refresh(withDiv: boolean, history = false) {
+    try {
+      const r = await api<{ quotes_saved: number; dividends_saved: number; missing: Record<string, string> }>(
+        `/api/market/refresh?with_dividends=${withDiv}${history ? "&history_range=1y" : ""}`,
+        { method: "POST" },
+      );
       const miss = Object.entries(r.missing);
       setResult(`${r.quotes_saved} cotação(ões), ${r.dividends_saved} provento(s) salvos.${miss.length ? ` Ausentes: ${miss.map(([t, m]) => `${t} (${m})`).join("; ")}` : ""}`);
       logs.reload();
@@ -71,9 +84,11 @@ export default function ConfiguracoesPage() {
           <div className="mt-3 flex flex-wrap gap-2">
             <button className={btnCls} onClick={() => refresh(false)}>Atualizar cotações</button>
             <button className={btnCls} onClick={() => refresh(true)}>Cotações + proventos</button>
+            <button className={btnCls} onClick={() => refresh(true, true)}>Histórico de 12 meses</button>
+            <button className={btnCls} onClick={cvmImport}>Importar VP da CVM</button>
           </div>
           {result && <p className="mt-3 text-sm text-ink-2">{result}</p>}
-          <Notes items={["Para usar a BRAPI: defina INVESTAI_MARKET_PROVIDER=brapi e INVESTAI_BRAPI_TOKEN no .env da API (nunca no código)."]} />
+          <Notes items={["BRAPI: basta definir INVESTAI_BRAPI_TOKEN (ou BRAPI_TOKEN) no ambiente da API, nunca no código.", "O histórico de 12 meses alimenta liquidez e preço médio; o informe da CVM alimenta o P/VP."]} />
         </Card>
       </div>
       <Card className="mt-4" title="Log de atualizações (rastreabilidade)">

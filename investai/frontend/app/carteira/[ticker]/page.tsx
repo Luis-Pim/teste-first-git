@@ -26,7 +26,12 @@ interface Detail {
     data_points: number;
   };
   quotes: { quote_date: string; close: string; source: string }[];
-  indicators: { available: boolean; fields: string[]; reason: string };
+  indicators: {
+    available: boolean;
+    pvp: string | null;
+    reason: string | null;
+    rows: { id: number; ref_date: string; vp_per_share: string | null; vacancy: string | null; default_rate: string | null; leverage: string | null; source: string; source_url: string | null }[];
+  };
 }
 
 const SEGMENTS = ["Recebíveis (CRI)", "Logística", "Shoppings", "Híbrido", "Lajes corporativas", "Agro (Fiagro)", "Energia", "Fundo de fundos", "Renda urbana", "Outros"];
@@ -150,19 +155,82 @@ export default function FundoPage({ params }: { params: { ticker: string } }) {
             <Empty>Sem cotações.</Empty>
           )}
         </Card>
-        <Card title="Indicadores fundamentalistas">
-          <ul className="space-y-1 text-sm">
-            {data.indicators.fields.map((f) => (
-              <li key={f} className="flex justify-between">
-                <span className="text-ink-2">{f}</span>
-                <span className="text-ink-3">indisponível</span>
-              </li>
-            ))}
-          </ul>
-          <Notes items={[data.indicators.reason]} />
-        </Card>
+        <IndicatorsCard ticker={t} ind={data.indicators} onSaved={reload} />
       </div>
     </>
+  );
+}
+
+const pctIn = (v: string) => (v.trim() === "" ? null : String(Number(v.replace(",", ".")) / 100));
+
+function IndicatorsCard({ ticker, ind, onSaved }: { ticker: string; ind: Detail["indicators"]; onSaved: () => void }) {
+  const [f, setF] = useState({ ref_date: new Date().toISOString().slice(0, 10), vp: "", vac: "", inad: "", alav: "", url: "" });
+  const [msg, setMsg] = useState<string | null>(null);
+  const latest = (k: "vp_per_share" | "vacancy" | "default_rate" | "leverage") => ind.rows.find((r) => r[k] !== null);
+  const show = (k: "vp_per_share" | "vacancy" | "default_rate" | "leverage", fmt: (v: string) => string) => {
+    const r = latest(k);
+    return r ? (
+      <span>
+        {fmt(r[k] as string)} <span className="text-[11px] text-ink-3">{date(r.ref_date)}</span> <SourceBadge source={r.source} />
+      </span>
+    ) : (
+      <span className="text-ink-3">não informado</span>
+    );
+  };
+  async function save(e: React.FormEvent) {
+    e.preventDefault();
+    try {
+      await api("/api/indicators", {
+        method: "POST",
+        json: {
+          ticker, ref_date: f.ref_date, source: "MANUAL", source_url: f.url || null,
+          vp_per_share: f.vp.trim() ? f.vp.replace(",", ".") : null,
+          vacancy: pctIn(f.vac), default_rate: pctIn(f.inad), leverage: pctIn(f.alav),
+        },
+      });
+      setMsg("Indicadores salvos.");
+      setF({ ...f, vp: "", vac: "", inad: "", alav: "" });
+      onSaved();
+    } catch (err) {
+      setMsg((err as Error).message);
+    }
+  }
+  return (
+    <Card title="Indicadores fundamentalistas">
+      <dl className="space-y-1.5 text-sm">
+        <KV k="P/VP" v={ind.pvp ? Number(ind.pvp).toFixed(2).replace(".", ",") : "—"} />
+        <KV k="VP por cota" v={show("vp_per_share", (v) => money(v))} />
+        <KV k="Vacância" v={show("vacancy", (v) => pct(v, 1))} />
+        <KV k="Inadimplência" v={show("default_rate", (v) => pct(v, 1))} />
+        <KV k="Alavancagem" v={show("leverage", (v) => pct(v, 1))} />
+      </dl>
+      {ind.reason && <Notes items={[ind.reason]} />}
+      <form onSubmit={save} className="mt-4 grid grid-cols-2 gap-2 border-t border-slate-100 pt-3">
+        <div className="col-span-2 text-xs font-medium text-ink-2">Lançar do relatório gerencial</div>
+        <Field label="Data de referência">
+          <input id="ind-date" type="date" className={inputCls} value={f.ref_date} onChange={(e) => setF({ ...f, ref_date: e.target.value })} required />
+        </Field>
+        <Field label="VP por cota (R$)">
+          <input id="ind-vp" className={inputCls} inputMode="decimal" value={f.vp} onChange={(e) => setF({ ...f, vp: e.target.value })} />
+        </Field>
+        <Field label="Vacância (%)">
+          <input id="ind-vac" className={inputCls} inputMode="decimal" value={f.vac} onChange={(e) => setF({ ...f, vac: e.target.value })} />
+        </Field>
+        <Field label="Inadimplência (%)">
+          <input id="ind-inad" className={inputCls} inputMode="decimal" value={f.inad} onChange={(e) => setF({ ...f, inad: e.target.value })} />
+        </Field>
+        <Field label="Alavancagem (%)">
+          <input id="ind-alav" className={inputCls} inputMode="decimal" value={f.alav} onChange={(e) => setF({ ...f, alav: e.target.value })} />
+        </Field>
+        <Field label="Link do relatório">
+          <input id="ind-url" className={inputCls} value={f.url} onChange={(e) => setF({ ...f, url: e.target.value })} placeholder="https://" />
+        </Field>
+        <div className="col-span-2 flex items-center gap-2">
+          <button className={btnCls}>Salvar</button>
+          {msg && <span className="text-xs text-ink-2">{msg}</span>}
+        </div>
+      </form>
+    </Card>
   );
 }
 

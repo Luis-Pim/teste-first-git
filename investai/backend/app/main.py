@@ -5,7 +5,7 @@ from fastapi.encoders import ENCODERS_BY_TYPE
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import get_settings
-from app.routers import market, planning, portfolio
+from app.routers import market, planning, portfolio, recommendations
 
 
 def _decimal_to_str(d: Decimal) -> str:
@@ -31,6 +31,7 @@ app.add_middleware(
 app.include_router(portfolio.router)
 app.include_router(market.router)
 app.include_router(planning.router)
+app.include_router(recommendations.router)
 
 
 @app.get("/api/health")

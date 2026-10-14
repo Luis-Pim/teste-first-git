@@ -140,7 +140,8 @@ def test_dashboard_with_demo_data(client):
     assert Dec(d["budget"]["available"]) == Dec("300.00")
     assert any(u["ticker"] == "KNCR11" for u in d["upcoming_payments"])  # anúncio DEMO pago em 14/10
     det = client.get("/api/assets/KNRI11/detail", params=Q).json()
-    assert det["indicators"]["available"] is False and Dec(det["dividend_stats"]["sum_12m"]) == Dec("12")
+    assert det["indicators"]["available"] is True and det["indicators"]["rows"][0]["source"] == "DEMO"
+    assert Dec(det["dividend_stats"]["sum_12m"]) == Dec("12")
 
 
 # ---------------------------------------------------------------- adaptadores de mercado (HTTP simulado)

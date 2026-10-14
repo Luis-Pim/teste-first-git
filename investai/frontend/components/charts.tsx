@@ -10,7 +10,9 @@ const GRID = "#e8ebef";
 const inkLegend = (v: string) => <span style={{ color: "#52606d" }}>{v}</span>;
 
 const compact = (v: number) =>
-  Math.abs(v) >= 1000 ? `R$ ${(v / 1000).toLocaleString("pt-BR", { maximumFractionDigits: 1 })} mil` : `R$ ${v.toLocaleString("pt-BR", { maximumFractionDigits: 0 })}`;
+  Math.abs(v) >= 1000
+    ? `R$ ${(v / 1000).toLocaleString("pt-BR", { maximumFractionDigits: 1 })} mil`
+    : `R$ ${v.toLocaleString("pt-BR", { minimumFractionDigits: Math.abs(v) < 10 && v !== 0 ? 2 : 0, maximumFractionDigits: Math.abs(v) < 10 ? 2 : 0 })}`;
 
 type Row = Record<string, string | number | null>;
 

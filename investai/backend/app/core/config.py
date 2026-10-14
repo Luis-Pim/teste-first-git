@@ -1,5 +1,6 @@
 from functools import lru_cache
 
+from pydantic import AliasChoices, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -11,9 +12,10 @@ class Settings(BaseSettings):
     database_url: str = "postgresql+psycopg://investai:investai@localhost:5432/investai"
     cors_origins: list[str] = ["http://localhost:3000"]
 
-    # Provedores de mercado: "manual" (padrão, sem rede), "brapi"
-    market_provider: str = "manual"
-    brapi_token: str | None = None
+    # Provedor de mercado: "auto" usa a BRAPI quando há token e o modo manual caso contrário
+    market_provider: str = "auto"
+    brapi_token: str | None = Field(default=None, validation_alias=AliasChoices("INVESTAI_BRAPI_TOKEN", "BRAPI_TOKEN"))
+    openai_api_key: str | None = Field(default=None, validation_alias=AliasChoices("INVESTAI_OPENAI_API_KEY", "OPENAI_API_KEY"))
     brapi_base_url: str = "https://brapi.dev/api"
     bcb_base_url: str = "https://api.bcb.gov.br/dados/serie"
     http_timeout_seconds: float = 10.0
